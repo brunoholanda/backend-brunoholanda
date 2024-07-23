@@ -3,6 +3,10 @@ import { ConfigService } from '@nestjs/config';
 import { User } from './users/user.entity';
 import { Post } from './posts/post.entity';
 import { Lead } from './leads/lead.entity';
+import * as dotenv from 'dotenv';
+
+// Carrega as variáveis de ambiente do arquivo .env
+dotenv.config();
 
 const configService = new ConfigService();
 
