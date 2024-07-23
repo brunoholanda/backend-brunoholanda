@@ -20,7 +20,13 @@ async function bootstrap() {
   });
 
   const app = await NestFactory.create(AppModule, new ExpressAdapter(expressApp));
-  app.enableCors();
+  
+  // Configurar CORS
+  app.enableCors({
+    origin: 'https://brunoholanda.com', // Altere para uma lista de domínios permitidos para maior segurança
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
 
   await app.listen(4000);
 
