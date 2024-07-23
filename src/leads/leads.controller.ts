@@ -7,12 +7,22 @@ export class LeadsController {
   constructor(private readonly leadsService: LeadsService) {}
 
   @Post()
-  create(@Body() createLeadDto: CreateLeadDto) {
-    return this.leadsService.create(createLeadDto);
+  async create(@Body() createLeadDto: CreateLeadDto) {
+    const lead = await this.leadsService.create(createLeadDto);
+    return {
+      statusCode: 201,
+      message: 'Lead created successfully',
+      data: lead,
+    };
   }
 
   @Get()
-  findAll() {
-    return this.leadsService.findAll();
+  async findAll() {
+    const leads = await this.leadsService.findAll();
+    return {
+      statusCode: 200,
+      message: 'Leads retrieved successfully',
+      data: leads,
+    };
   }
 }

@@ -23,7 +23,6 @@ async function bootstrap() {
   
   app.setGlobalPrefix('api');
 
-  
   // Configurar CORS
   app.enableCors({
     origin: '*', // Altere para uma lista de domínios permitidos para maior segurança
