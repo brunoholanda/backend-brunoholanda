@@ -3,7 +3,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Post } from './post.entity';
 import { PostsService } from './posts.service';
 
-@Controller('posts')
+@Controller('api/posts')
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
 
