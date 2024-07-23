@@ -2,7 +2,7 @@ import { Controller, Get, Param, Res } from '@nestjs/common';
 import { Response } from 'express';
 import * as path from 'path';
 
-@Controller('api/pdf')
+@Controller('pdf')
 export class PdfController {
   @Get(':fileName')
   getPdf(@Param('fileName') fileName: string, @Res() res: Response) {

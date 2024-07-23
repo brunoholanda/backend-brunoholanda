@@ -21,9 +21,12 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule, new ExpressAdapter(expressApp));
   
+  app.setGlobalPrefix('api');
+
+  
   // Configurar CORS
   app.enableCors({
-    origin: 'https://brunoholanda.com', // Altere para uma lista de domínios permitidos para maior segurança
+    origin: '*', // Altere para uma lista de domínios permitidos para maior segurança
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
