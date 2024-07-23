@@ -4,7 +4,6 @@ import { User } from './users/user.entity';
 import { Post } from './posts/post.entity';
 import { Lead } from './leads/lead.entity';
 
-
 const configService = new ConfigService();
 
 export const AppDataSource = new DataSource({
@@ -14,8 +13,8 @@ export const AppDataSource = new DataSource({
   username: configService.get<string>('DB_USERNAME'),
   password: configService.get<string>('DB_PASSWORD'),
   database: configService.get<string>('DB_DATABASE'),
-  entities: [User, Post, Lead], // Adicione Lead aqui
-  migrations: ['src/migration/*.ts'],
+  entities: [User, Post, Lead],
+  migrations: ['dist/migration/*.js'],
   synchronize: false,
 });
 

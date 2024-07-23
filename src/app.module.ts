@@ -1,16 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { PostsModule } from './posts/posts.module';
 import { LeadsModule } from './leads/leads.module';
-
 import { User } from './users/user.entity';
-import { Lead } from './leads/lead.entity';
 import { Post } from './posts/post.entity';
-
+import { Lead } from './leads/lead.entity';
 
 @Module({
   imports: [
