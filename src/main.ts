@@ -25,14 +25,14 @@ async function bootstrap() {
 
   // Configurar CORS
   app.enableCors({
-    origin: 'https://brunoholanda.com', // Especifique o domínio permitido
+    origin: '*', // Especifique o domínio permitido
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
-  await app.listen(3336);
+  await app.listen(3346);
 
-  console.log('Application is running on: http://localhost:3336');
+  console.log('Application is running on: http://localhost:3346');
 }
 
 bootstrap();
