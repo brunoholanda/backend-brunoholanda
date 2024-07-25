@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  app:
+    image: backend:latest
+    ports:
+      - '3336:3336'
+      #environment:
+      # - NODE_ENV=production
+      #- DATABASE_HOST=db
+      #- DATABASE_PORT=5432
+      #- DATABASE_USER=brunoholanda 
+      #- DATABASE_PASSWORD=%A0UYSg*
+      #- DATABASE_NAME=backend
+    volumes:
+      - .:/usr/src/app
+    #command: sh -c "npm run start || tail -f /dev/null"
