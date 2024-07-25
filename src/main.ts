@@ -20,19 +20,22 @@ async function bootstrap() {
   });
 
   const app = await NestFactory.create(AppModule, new ExpressAdapter(expressApp));
-  
+
   app.setGlobalPrefix('api/v1');
 
   // Configurar CORS
   app.enableCors({
-    origin: '*', // Especifique o domínio permitido
+    origin: 'https://brunoholanda.com', // Especifique o domínio permitido
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
-  await app.listen(3346);
+  const host = process.env.HOST || '0.0.0.0';
+  const port = parseInt(process.env.PORT, 10) || 3336;
 
-  console.log('Application is running on: http://localhost:3346');
+  await app.listen(port, host);
+
+  console.log(`Application is running on: http://${host}:${port}`);
 }
 
 bootstrap();
